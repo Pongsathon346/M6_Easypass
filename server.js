@@ -81,7 +81,9 @@ http.createServer(function (req, res) {
             break;
         case '/checkmoney':
             try {
+                let valid = /[123]{1}/
                 let showIem =  checkmoney(request_path.query.id);
+                valid.test(showIem)
                 message += 'success';
                 response_object.data = showIem
                 status = 200;
